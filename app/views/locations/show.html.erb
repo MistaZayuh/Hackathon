@@ -1,12 +1,7 @@
 <h1><%= @location.name %></h1>
 <h3><%= @location.days%></h3>
 <br/>
-<% @location.addresses.each do |address| %>
-  <div>
-    <h3><%= link_to address.name, [@location, address] %></h3>
-  </div>
-<% end %>
-<br/>
+
 <br/>
 
 <%= link_to 'Add Address', new_location_address_path(@location), class: "ui blue button" %>

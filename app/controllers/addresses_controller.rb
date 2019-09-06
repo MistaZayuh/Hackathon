@@ -9,7 +9,7 @@ class AddressesController < ApplicationController
   end
 
   def new
-    @address = @location.addresses.new()
+    @address = Address.new
   end
 
   def create
@@ -18,6 +18,7 @@ class AddressesController < ApplicationController
       redirect_to [@location, @address]
     else
       render :new
+    end
   end
 
   def edit
@@ -27,6 +28,9 @@ class AddressesController < ApplicationController
   def update 
     if @address.update(address_params)
       redirect_to [@location, @address]
+    else
+      render :edit
+    end
   end
 
   def destroy
