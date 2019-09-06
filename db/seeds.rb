@@ -4,7 +4,7 @@
 User.create(
   email: "test@test.com",
   password: "password",
-  password: "password"
+  password_confirmation: "password"
 )
 
   10.times do
@@ -14,12 +14,14 @@ User.create(
       start_date: Faker::Date.forward(days: 23),
       end_date: Faker::Date.forward(days: 37)
     )
+  end
   5.times do
     Location.create(
       name: Faker::Address.city,
-      days: rand(1...7)
+      days: rand(1...7),
       trip_id: rand(1...@trip)
     )
+  end
   5.times do 
     Address.create(
       street: Faker::Address.street_name,
@@ -28,5 +30,6 @@ User.create(
       zip: Faker::Address.zip,
       location_id: rand(1...@location)
     )
+  end
 
 puts "Data Seeded"
