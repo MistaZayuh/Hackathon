@@ -35,13 +35,16 @@ class LocationsController < ApplicationController
   end
 
   def destroy
+    
     @location.destroy
-    redirect_to trip_location_path(@trip)
+    redirect_to trips_path
+   
+    
   end
 
   private
   def set_trip
-    @trip = Trip.find(params[:trip_id])
+    @trip = current_user.trips.find(params[:trip_id])
   end
   
   def set_location
