@@ -6,5 +6,5 @@
 <h3>State: <%= @address.state %></h3>
 <h3>Zip code: <%= @address.zip %></h3>
 
-<%= link_to "Back", trip_location_path(@location.trip_id, @location), class: "ui green inverted button" %>
+<%= link_to "Back", trip_location_path(@location.trip_id, @location), class: "ui purple inverted button" %>
 <%= button_to "Delete", [@location, @address], method: :delete, class: "ui red inverted button" %>
