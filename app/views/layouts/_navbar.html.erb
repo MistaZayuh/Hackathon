@@ -1,6 +1,7 @@
 <nav class= "ui menu">
   <%= link_to 'Trips', trips_path, class: "item" %>
   <%= link_to 'New Trip', new_trip_path, class: "item" %>
+  
   <div class="right menu">
     <% if current_user %>
       <%= link_to 'Edit User', edit_user_registration_path, class: "item" %>
