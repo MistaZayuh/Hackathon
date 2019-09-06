@@ -1,12 +1,21 @@
-<h1>Trips</h1>
 
+<head>
+
+<h1 class="ui violet header"> Trip Planner</h1>
+</head>
+
+<body>
+
+<div container>
+<div class="trips">
 <% @trips.each do |trip| %>
  <div>
     <h3><%= link_to trip.name, trip_path(trip) %></h3>
 </div>
 <% end %>
+</div>
 
-
-
+<img src="https://productivityist.com/wp-content/uploads/Productivityist-Proactive-Travel-Plan.jpg" alt="planning" style="opacity:0.4;filter:alpha(opacity=40);">
+</body>
 
  
