@@ -35,7 +35,7 @@ class AddressesController < ApplicationController
 
   def destroy
     @address.destroy
-    redirect_to trip_location_path(@location)
+    redirect_to location_path(@location)
   end
 
   private
