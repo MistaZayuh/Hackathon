@@ -1,0 +1,12 @@
+<h1>Trips</h1>
+
+<% @trips.each do |trip| %>
+ <div>
+    <h3><%= link_to trip.name, trip_path(trip) %></h3>
+</div>
+<% end %>
+
+
+
+
+ 
