@@ -11,11 +11,11 @@ gem 'webpacker', '~> 4.0'
 gem 'jbuilder', '~> 2.7'
 gem "semantic-ui-sass"
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem "devise"
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 end
 
 group :development do
