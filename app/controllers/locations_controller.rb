@@ -1,4 +1,7 @@
 class LocationsController < ApplicationController
+  before_action :set_trip
+  before_action :set_location only: [:show, :edit, :update, :destroy]
+  
   def index
     @locations = trip_locations_path
   end
@@ -31,12 +34,15 @@ class LocationsController < ApplicationController
   end
 
   private
-  def
+  def location_params
+    params.require(:location).permit(:name, :days, :trip_id)
   end
 
-  def
+  def set_location
+    @location = Trip.find(params[:id])
   end
 
-  def
+  def set_trip
+    @trip = Trip.find(params[:id])
   end
 end
