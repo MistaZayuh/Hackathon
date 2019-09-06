@@ -9,13 +9,13 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trips = Trips.new 
+    @trip = Trip.new 
   end
 
   def create 
-    @trips = current_user.trips.new(trip_params)
+    @trip = current_user.trips.new(trip_params)
     if @trip.save
-      rediret_to trips_path
+      redirect_to trips_path
     else 
       render :new 
     end 
@@ -26,7 +26,7 @@ class TripsController < ApplicationController
 
   def update 
     if @trip.updates(trip_params)
-      redirect_to trips_path(@trips)
+      redirect_to trip_path(@trip)
     else 
       render :edit
     end 
@@ -39,7 +39,7 @@ class TripsController < ApplicationController
 
   private 
   def trip_params
-    params.require(trip).permit(:name,:start_date, :end_date)
+    params.require(:trip).permit(:name, :start_date, :end_date)
   end
   
   def set_trip
