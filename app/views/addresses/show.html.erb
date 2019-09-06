@@ -7,4 +7,4 @@
 <h3>Zip code: <%= @address.zip %></h3>
 
 <%= link_to "Back", trip_location_path(@location), class: "ui green inverted button" %>
-<%= link_to "Delete", location_address_path(@location, @address), method: :delete, class: "ui red inverted button" %>
+<%= button_to "Delete", location_address_path(@location, @address), method: :delete, class: "ui red inverted button" %>

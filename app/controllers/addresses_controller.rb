@@ -2,7 +2,7 @@ class AddressesController < ApplicationController
   before_action :set_location
   before_action :set_address, only: [:show, :edit, :update, :destroy]
   def index
-    @addresses = @location.address
+    @addresses = @location.addresses
   end
 
   def show
@@ -35,7 +35,7 @@ class AddressesController < ApplicationController
 
   def destroy
     @address.destroy
-    redirect_to location_adresses_path(@location)
+    redirect_to trip_path(@location)
   end
 
   private
