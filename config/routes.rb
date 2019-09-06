@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :locations do
-    resources :adresses
+    resources :addresses
   end
 end
