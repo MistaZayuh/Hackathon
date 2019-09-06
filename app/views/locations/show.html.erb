@@ -3,7 +3,11 @@
 <br/>
 
 <br/>
-
+<ul>
+  <% @location.addresses.each do |address| %>
+    <li><%= link_to "#{address.city}, #{address.state}", location_address_path(@location, address) %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Add Address', new_location_address_path(@location), class: "ui blue button" %>
 <%= link_to "Back", trip_path(@trip), class: "ui green inverted button" %>
