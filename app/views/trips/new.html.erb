@@ -1,2 +1,15 @@
-<h1>Trips#new</h1>
-<p>Find me in app/views/trips/new.html.erb</p>
+<h1> <%= @trip.name %> </h1>
+
+
+<% @trip.lists.each do |list| %>
+  <div>
+    <h3><%= link_to list.name, [@trip, list] %></h3>
+  </div>
+<% end %>
+
+<%= link_to 'New List', new_trip_list_path(@trip), class: "ui purple button"  %>
+<%= link_to 'View Lists', trip_lists_path(@trip), class: "ui purple button" %>
+<br/>
+<br/>
+<%= link_to "Edit Trip", edit_trip_path(@trip), class: "ui blue button" %>
+<%= link_to "Delete Trip ", trip_path(@trip), method: :delete, class: "ui red button" %>
