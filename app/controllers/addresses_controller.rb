@@ -35,7 +35,7 @@ class AddressesController < ApplicationController
 
   def destroy
     @address.destroy
-    redirect_to location_adresses_path(@location)
+    redirect_to trip_location_path(@location)
   end
 
   private
@@ -50,6 +50,4 @@ class AddressesController < ApplicationController
     def set_address
       @address = Address.find(params[:id])
     end
-
-
 end

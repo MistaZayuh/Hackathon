@@ -9,7 +9,7 @@
   <% end %>
 </ul>
 
-<%= link_to 'Add Address', new_location_address_path(@location), class: "ui blue button" %>
-<%= link_to "Back", trip_path(@trip), class: "ui green inverted button" %>
+<%= button_to 'Add Address', new_location_address_path(@location), class: "ui blue button" %>
+<%= button_to "Back", trip_path(@trip), class: "ui green inverted button" %>
 <%= button_to 'Delete Location', [@trip, @location], method: :delete, class: "ui red button" %>
 
